@@ -4,7 +4,7 @@ public class Main {
         System.out.println("hello world");
 
         int ton = 5;
-        x(5);
+        System.out.println(Ton.x(25));
         System.out.println (ton);
         System.out.println ("hvad saa?");
     }
