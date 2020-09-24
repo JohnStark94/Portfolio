@@ -5,5 +5,6 @@ public class Main {
 
         int ton = 5;
         System.out.println (ton);
+        System.out.println ("hvad saa?");
     }
 }
