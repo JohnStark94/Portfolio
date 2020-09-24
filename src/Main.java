@@ -4,6 +4,7 @@ public class Main {
         System.out.println("hello world");  // HEST
 
         int ton = 5;
-        System.out.println("What up");
+        System.out.println (ton);
+        System.out.println ("hvad saa?");
     }
 }
