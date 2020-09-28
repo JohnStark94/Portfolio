@@ -1,9 +1,13 @@
-public class Shape {
+abstract class Shape {
     protected String type;
-    protected int areal;
+    protected int length;
+    protected int centerPosition;
+    protected int topLeftPosition, bottomLeftPosition, topRightPosition, bottomRightPosition;
 
-    public Shape(String type, int areal) {
+    public Shape(String type, int length) {
         this.type=type;
-        this.areal=areal;
+        this.length=length;
     }
 }
+
+
