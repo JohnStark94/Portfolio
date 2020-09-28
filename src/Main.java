@@ -4,6 +4,8 @@ public class Main {
         // VIRKER DET HER LORT STADIG
         System.out.println("hello world");
 
+        // Ja lortet virker stadig
+
         int ton = 5;
         System.out.println(Ton.x(25));
         System.out.println (ton);
