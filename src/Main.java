@@ -1,6 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
+        // VIRKER DET HER LORT STADIG
         System.out.println("hello world");
 
         int ton = 5;
