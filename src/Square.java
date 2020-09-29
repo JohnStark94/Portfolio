@@ -7,12 +7,9 @@ public class Square extends Shape {
     int[] axisPositions = new int[8];
 
 
-    public Square(String type, int length, int xPosition, int yPosition) {
-        super(type, length, xPosition, yPosition);
+    public Square(String type, int length) {
+        super(type, length);
         Arrays.fill(sides, this.length);
-
-        this.xPosition=xPosition;
-        this.yPosition=yPosition;
 
         // This section places the corners of the square on the correct x and y axis depending on the length of the sides.
         // TOP LEFT CORNER
@@ -38,10 +35,12 @@ public class Square extends Shape {
 
         }
         for (int i=0; i<axisNames.length; i++) {
-            System.out.printf("%s is at %d\n", axisNames[i], axisPositions[i]);
+            System.out.printf("%s is at %d", axisNames[i], axisPositions[i]);
+            if (i%2==1) {
+                System.out.print("\n");
+            } else {
+                System.out.print("  |  ");
+            }
         }
     }
-
-
-
 }
