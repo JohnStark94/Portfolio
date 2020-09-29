@@ -8,8 +8,9 @@ public class Square extends Shape {
 
 
     public Square(String type, int length) {
-        super(type, length);
+        super(type);
         Arrays.fill(sides, this.length);
+        this.areal=length*length;
 
         // This section places the corners of the square on the correct x and y axis depending on the length of the sides.
         // TOP LEFT CORNER
@@ -42,5 +43,7 @@ public class Square extends Shape {
                 System.out.print("  |  ");
             }
         }
+        System.out.println("The center of the square is X:" + center[0] + " and Y:" + center[1]);
+        System.out.println("The areal of the square is: " + areal);
     }
 }
