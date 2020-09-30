@@ -5,6 +5,7 @@ public class Circle extends Shape {
         this.center[1] = (int) (Math.random() * axis.getyAxis().length);
     }
 
+    @Override
     void printInformation() {
 
     }

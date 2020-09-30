@@ -43,5 +43,3 @@ abstract class Shape {
         return "The distance between the center of the two shapes are " + distance[0] + " on the X-axis and " + distance[1] + " on the Y-axis";
     }
 }
-
-

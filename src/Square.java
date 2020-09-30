@@ -30,6 +30,7 @@ public class Square extends Shape {
         axisPositions[7]=axisPositions[3]-sides[1];
     }
 
+    @Override
     public void printInformation() {
         for (int i=0; i<sides.length; i++) {
             System.out.printf("Side %d is: %dcm\n", (i+1), sides[i]);
