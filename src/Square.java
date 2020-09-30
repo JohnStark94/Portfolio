@@ -7,10 +7,12 @@ public class Square extends Shape {
     int[] axisPositions = new int[8];
 
 
-    public Square(String type, int length) {
+    public Square(String type) {
         super(type);
+        this.length = (int) (Math.random() * 15) + 1;
+        this.center[0] = this.xPosition + (length/2);
+        this.center[1] = this.yPosition - (length/2);
         Arrays.fill(sides, this.length);
-        this.areal=length*length;
 
         // This section places the corners of the square on the correct x and y axis depending on the length of the sides.
         // TOP LEFT CORNER
@@ -28,9 +30,13 @@ public class Square extends Shape {
         // BOTTOM RIGHT CORNER
         axisPositions[6]=axisPositions[0]+sides[2];
         axisPositions[7]=axisPositions[3]-sides[1];
+
+        computeArea();
+        printInformation();
     }
 
     public void printInformation() {
+        System.out.println(type + ":");
         for (int i=0; i<sides.length; i++) {
             System.out.printf("Side %d is: %dcm\n", (i+1), sides[i]);
 
@@ -44,6 +50,13 @@ public class Square extends Shape {
             }
         }
         System.out.println("The center of the square is X:" + center[0] + " and Y:" + center[1]);
-        System.out.println("The areal of the square is: " + areal);
+        System.out.println("The areal of the square is: " + area);
+        System.out.println();
+    }
+
+    @Override
+    int computeArea() {
+        area=length*length;
+        return area;
     }
 }
