@@ -1,6 +1,3 @@
-import java.awt.*;
-import java.util.Arrays;
-
 abstract class Shape {
     protected String type;
     protected int perimeter;
@@ -35,7 +32,7 @@ abstract class Shape {
     abstract int computeArea();
 
 
-    public int[] distance (Shape other) {
+    public void distance (Shape other) {
         for (int i=0; i<distance.length; i++) {
             distance[i]=this.center[i]-=other.center[i];
             if (distance[i]<0) {
@@ -44,7 +41,6 @@ abstract class Shape {
         }
         System.out.println("The distance between *" + this.type + "* and *" + other.type +
                 "* is:\n" + distance[0] + " on the X-axis\n" + distance[1] + " on the Y-axis");
-        return distance;
     }
 }
 

@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         Square square = new Square("Square");
@@ -8,7 +6,7 @@ public class Main {
 
 
         // Creates a new point if the point is not inside a square
-        while (point.isInside(square) == false) {
+        while (!point.isInside(square)) {
             point = new Dot();
             System.out.println(point.isInside(square));
         }
