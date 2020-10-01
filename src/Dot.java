@@ -23,26 +23,23 @@ public class Dot extends Shape {
 
     boolean isInside(Shape other) {
         if (other.type.equals("Square")) {
-            if (this.center[0] > other.xPosition && this.center[0] < other.xPosition+other.length) {
-                if (this.center[1] < other.yPosition && this.center[1] > other.yPosition-other.length) {
+            if (this.center[0] > other.xPosition && this.center[0] < other.xPosition + other.length) {
+                if (this.center[1] < other.yPosition && this.center[1] > other.yPosition - other.length) {
                     return true;
                 }
             }
-            /*
-            if (this.center[0] == other.center[0] + (other.length/2)
-                || this.center[0] == other.center[0] - (other.length/2)) {
-                if (this.center[1] == other.center[1] + (other.length / 2)
-                        || this.center[1] == other.center[1] + (other.length / 2)) {
-                    return true;
-                }
-            }*/
         }
 
+
         if (other.type.equals("Circle")) {
+            if (this.center[0] > other.center[0]-other.radius && this.center[0] < other.center[0]+other.radius) {
+                if (this.center[1] > other.center[1]-other.radius && this.center[1] < other.center[1]+other.radius) {
+                    System.out.println(other.center[0] + "  :  " + other.center[1] + "  :  " + other.radius);
+                    return true;
+                }
+            }
 
         }
         return false;
     }
-
-
 }

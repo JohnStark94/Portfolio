@@ -6,9 +6,9 @@ public class Main {
 
 
         // Creates a new point if the point is not inside a square
-        while (!point.isInside(square)) {
+        while (!point.isInside(circle)) {
             point = new Dot();
-            System.out.println(point.isInside(square));
+            System.out.println(point.isInside(circle));
         }
 
         square.distance(circle);
