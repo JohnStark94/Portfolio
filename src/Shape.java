@@ -27,9 +27,16 @@ abstract class Shape {
         }
     }
 
+    // Some abstract methods that is common behavior for all shapes
+
     abstract void printInformation();
 
     abstract int computeArea();
+
+    // Perimeter and circumference is the same thing
+    abstract int computePerimeter();
+
+    abstract void computeCenter();
 
 
     public void distance (Shape other) {
