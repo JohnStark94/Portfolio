@@ -1,11 +1,10 @@
 public class Circle extends Shape {
     public Circle(String type) {
         super(type);
-        this.center[0] = (int) (Math.random() * axis.getxAxis().length);
-        this.center[1] = (int) (Math.random() * axis.getyAxis().length);
         this.radius = (int) (Math.random() * 7) + 1;
 
         computeArea();
+        computeCenter();
         computePerimeter();
         printInformation();
     }
@@ -14,9 +13,9 @@ public class Circle extends Shape {
         System.out.println(type + ":");
         System.out.println("Center on X-axis: " + this.center[0]);
         System.out.println("Center on Y-axis: " + this.center[1]);
-        System.out.println("radius: " + radius);
-        System.out.println("area: " + computeArea());
-        System.out.println("perimeter: " + computePerimeter());
+        System.out.println("Radius: " + this.radius + "cm");
+        System.out.println("Area: " + this.area + "cm^2");
+        System.out.println("Perimeter: " + this.perimeter + "cm");
         System.out.println();
     }
 
@@ -29,6 +28,12 @@ public class Circle extends Shape {
     int computePerimeter() {
         perimeter = (int) (2 * Math.PI * radius);
         return perimeter;
+    }
+
+    @Override
+    void computeCenter() {
+        this.center[0] = (int) (Math.random() * axis.getxAxis().length);
+        this.center[1] = (int) (Math.random() * axis.getyAxis().length);
     }
 
 

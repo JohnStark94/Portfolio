@@ -3,22 +3,32 @@ public class Dot extends Shape {
     public Dot() {
         this.type="Point";
 
-        this.center[0] = (int) (Math.random() * axis.getxAxis().length);
-        this.center[1] = (int) (Math.random() * axis.getyAxis().length);
+        computeCenter();
         printInformation();
     }
 
     @Override
     void printInformation() {
         System.out.println(this.type + ":");
-        System.out.println("X is: " + this.center[0]);
-        System.out.println("Y is: " + this.center[1]);
+        System.out.println("Center on X-axis is: " + this.center[0]);
+        System.out.println("Center on Y-axis is: " + this.center[1]);
 
     }
 
     @Override
     int computeArea() {
         return 0;
+    }
+
+    @Override
+    int computePerimeter() {
+        return 0;
+    }
+
+    @Override
+    void computeCenter() {
+        this.center[0] = (int) (Math.random() * axis.getxAxis().length);
+        this.center[1] = (int) (Math.random() * axis.getyAxis().length);
     }
 
     boolean isInside(Shape other) {
