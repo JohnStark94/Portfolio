@@ -10,34 +10,18 @@ abstract class Shape {
 
     Axis axis = Axis.getAxis();
 
-
     public Shape(String type) {
         this.type=type;
-
-        this.xPosition = (int) (Math.random() * axis.getxAxis().length);
-        this.yPosition = (int) (Math.random() *axis.getyAxis().length);
-
-
-    }
-
-    public Shape() {
-        this.type="Point";
-        for (int i=0; i<center.length; i++) {
-            this.center[i] = (int) (Math.random() * axis.getxAxis().length);
-        }
     }
 
     // Some abstract methods that is common behavior for all shapes
-
     abstract void printInformation();
 
     abstract int computeArea();
 
-    // Perimeter and circumference is the same thing
-    abstract int computePerimeter();
+    abstract int computePerimeter();// Perimeter and circumference is the same thing
 
     abstract void computeCenter();
-
 
     public void distance (Shape other) {
         for (int i=0; i<distance.length; i++) {

@@ -1,5 +1,4 @@
 public class Axis {
-
     // This will create a coordinate system using the Singleton method. It will only create a single object
     private int[] xAxis = new int[100];
     private int[] yAxis = new int [100];

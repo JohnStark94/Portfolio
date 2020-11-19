@@ -1,11 +1,10 @@
 public class Main {
+
     public static void main(String[] args) {
-
         // Instantiates an object of our different shapes
-        Square square = new Square("Square");
-        Circle circle = new Circle("Circle");
-        Dot point = new Dot();
-
+        Square square = new Square("Square", 5,20,20);
+        Circle circle = new Circle("Circle", 20,20,20);
+        Dot point = new Dot("Dot",25,25);
 
         // Creates a new point if the point is not inside a square
         // Activate if you like
@@ -20,7 +19,5 @@ public class Main {
 
         //Measures distance from the square to the circle
         square.distance(circle);
-
     }
-
 }

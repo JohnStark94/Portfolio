@@ -2,26 +2,26 @@ import java.util.Arrays;
 
 public class Square extends Shape {
     int[] sides= new int[4];
-
+    int[] axisPositions = new int[8];
     // An array of strings that can be match to the position of all the corners
     /*String[] axisNames = {"top left corner X", "top left corner y", "top right corner x", "top right corner y",
             "bottom left corner x", "bottom left corner y", "bottom right corner x", "bottom right corner y"};*/
-    int[] axisPositions = new int[8];
-
-
-    public Square(String type) {
+    public Square(String type, int sideLength, int xPos, int yPos) {
         super(type);
+        this.length = sideLength;
+        this.xPosition = xPos;
+        this.yPosition = yPos;
 
-        //Creates a random length for the square's sides
-        this.length = (int) (Math.random() * 15) + 1;
+        if (sideLength<=0)
+            throw new IllegalArgumentException ("side length cannot be <=0");
 
-        Arrays.fill(sides, this.length);
+        Arrays.fill (sides, sideLength);
 
-        computeCorners();
-        computeCenter();
-        computeArea();
-        computePerimeter();
-        printInformation();
+        computeCorners ();
+        computeCenter ();
+        computeArea ();
+        computePerimeter ();
+        printInformation ();
     }
 
     @Override
@@ -38,12 +38,10 @@ public class Square extends Shape {
             }
         }*/
 
-
         System.out.println("Center on X-axis: " + this.center[0]);
         System.out.println("Center on Y-axis: " + this.center[1]);
-        for (int i=0; i<sides.length; i++) {
+        for (int i=0; i<sides.length;i++) {
             System.out.printf("Side %d: %dcm\n", (i+1), sides[i]);
-
         }
         System.out.println("Area: " + this.area + "cm^2");
         System.out.println("Perimeter: " + this.perimeter + "cm");
@@ -58,7 +56,7 @@ public class Square extends Shape {
 
     @Override
     int computePerimeter() {
-        perimeter = length*4;
+        perimeter = (length*4);
         return perimeter;
     }
 

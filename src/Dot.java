@@ -1,8 +1,9 @@
 public class Dot extends Shape {
 
-    public Dot() {
-        this.type="Point";
-
+    public Dot(String type, int xPos, int yPos) {
+        super (type);
+        this.center[0] = xPos;
+        this.center[1] = yPos;
         computeCenter();
         printInformation();
     }
@@ -12,7 +13,6 @@ public class Dot extends Shape {
         System.out.println(this.type + ":");
         System.out.println("Center on X-axis is: " + this.center[0]);
         System.out.println("Center on Y-axis is: " + this.center[1]);
-
     }
 
     @Override
@@ -27,8 +27,8 @@ public class Dot extends Shape {
 
     @Override
     void computeCenter() {
-        this.center[0] = (int) (Math.random() * axis.getxAxis().length);
-        this.center[1] = (int) (Math.random() * axis.getyAxis().length);
+        //this.center[0] = (int) (Math.random() * axis.getxAxis().length);
+        //this.center[1] = (int) (Math.random() * axis.getyAxis().length);
     }
 
     boolean isInside(Shape other) {
@@ -39,7 +39,6 @@ public class Dot extends Shape {
                 }
             }
         }
-
 
         if (other.type.equals("Circle")) {
             if (this.center[0] > other.center[0]-other.radius && this.center[0] < other.center[0]+other.radius) {
